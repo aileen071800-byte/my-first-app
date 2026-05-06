@@ -4,10 +4,6 @@
 
 `print ("This is my first app on streamlit")`
 
-# Heading 1
-## Heading 2
-### Heading 3
-
 **bold**          → **bold**
 *italic*          → *italic*
 ~~strikethrough~~ → ~~strikethrough~~
@@ -15,7 +11,7 @@
 
 - Item one
 - Item two
-  - Nested item
+- Nested item
  
 1. First
 2. Second
