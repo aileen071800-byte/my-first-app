@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임주은 | 무용학과 포트폴리오</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --text-color: #f3f4f6;
+            --accent-color: #8b5cf6;
+            --secondary-color: #ec4899;
+            --card-bg: #1e293b;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 15, 25, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+            background: radial-gradient(circle at center, #2e1065 0%, var(--bg-color) 70%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+        }
+
+        header h1 span {
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #9ca3af;
+            max-width: 600px;
+        }
+
+        section {
+            padding: 6rem 10%;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+
+        .about-text {
+            max-width: 800px;
+            font-size: 1.1rem;
+            color: #d1d5db;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.1);
+        }
+
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .project-card p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #c084fc;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-badge {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            color: #9ca3af;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 5%; }
+            nav ul { display: none; }
+            header h1 { font-size: 2.5rem; }
+            section { padding: 4rem 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">JUEUN IM</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>안녕하세요, <span>임주은</span>입니다.</h1>
+        <p>전통의 아름다움을 현대적인 데이터로 해석하는 무용가이자 연구가입니다.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <p>안녕하세요! 성균관대학교에서 <strong>무용학과</strong>를 전공하고 있는 임주은입니다.</p>
+            <p>저는 무용이 가진 신체적 언어와 예술적 가치를 무대 위에서 표현할 뿐만 아니라, 이를 빅데이터와 결합하여 무용 예술의 지속 가능한 발전 가능성을 탐구하고 있습니다.</p>
+            <p>직관적인 예술 영역인 무용을 객관적인 시장 흐름과 지역적 특성으로 분석해내는 융합형 인재를 목표로 나아가고 있습니다.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <span class="tag">빅데이터 분석</span>
+                <span class="tag">문화예술 연구</span>
+                <h3>Analyzing the Market Trends and Regional Distribution of Korean Traditional Dance Performances</h3>
+                <p>한국 전통 무용 공연의 시장 트렌드와 지역별 분포 현황을 데이터 기반으로 분석한 프로젝트입니다. 공공 데이터 및 공연 실적 데이터를 수집·가공하여 전통 무용이 어느 지역에 집중되어 있고 어떤 트렌드로 변화하는지 시각화 및 분석을 진행했습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-badge">한국무용 & 현대무용</div>
+            <div class="skill-badge">공연 기획 및 연출</div>
+            <div class="skill-badge">문화예술 데이터 분석</div>
+            <div class="skill-badge">시장 트렌드 분석</div>
+            <div class="skill-badge">Python (기초)</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>저의 프로젝트와 연구에 대해 더 알고 싶으시다면 언제든 연락주세요!</p><br>
+            <p>이메일: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>GitHub: <a href="https://github.com" target="_blank">github.com</a></p>
+        </div>
+    </section>
+
+</body>
+</html>
